@@ -52,6 +52,7 @@ const photographySchema = new mongoose.Schema({
     }
 });
 
+// Premiums for a base service. Includes an up charge, description, and name,
 const premium = new mongoose.Schema({
     upCharge: {
         type: Number,
@@ -67,6 +68,8 @@ const premium = new mongoose.Schema({
     },
 });
 
+/* Base service that serves has the base for every service. Includes a name, type, id to vendor, price,
+    information about if a service pays by hour or in full, premiums, and a description*/
 const baseServiceSchema = new mongoose.Schema({
     serviceName: {
         type: String,
