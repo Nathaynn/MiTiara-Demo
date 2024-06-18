@@ -1,5 +1,16 @@
 const mongoose = require('mongoose');
 
+// Helper function for validating categories
+function checkCategories(check){
+    const validCategories = ["venue", "catering", "entertainment", "decoration", "photography"]
+    for (let i = 0; i < check.length; i++) {
+        if (validCategories.indexOf(check[i]) === -1) {
+            return false;
+        }
+    }
+    return true;
+}
+
 /* Business hours of a vendor using the day as a String and using a Date object to indicate 
     times for the day of availability. */
 const businessHoursSchema = new mongoose.Schema({
@@ -71,7 +82,8 @@ const vendorSchema = new mongoose.Schema({
     },
     vendorCategories:{
         type: [String],
-        required: true
+        required: true,
+        validate: check => checkCategories(check)
     }
 
 });
