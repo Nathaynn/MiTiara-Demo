@@ -107,5 +107,5 @@ module.exports = mongoose.model('Base', baseServiceSchema);
 module.exports = Base.discriminator('VenueService', venueSchema);
 module.exports = Base.discriminator('CateringService', cateringSchema);
 module.exports = Base.discriminator('EntertainmentService', entertainmentSchema);
-module.exports = Base.decorationSchema ('DecorationService', decorationSchema);
+module.exports = Base.discriminator ('DecorationService', decorationSchema);
 module.exports = Base.discriminator('PhotographyService', photographySchema);

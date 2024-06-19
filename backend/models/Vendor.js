@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 // Helper function for validating categories
 function checkCategories(check){
     const validCategories = ["venue", "catering", "entertainment", "decoration", "photography"]
-    for (let i = 0; i < check.length; i++) {
-        if (validCategories.indexOf(check[i]) === -1) {
+    for (const element of check) {
+        if (validCategories.indexOf(element) === -1) {
             return false;
         }
     }

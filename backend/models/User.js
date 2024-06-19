@@ -3,8 +3,8 @@ const mongoose = require('mongoose');
 // Helper function for validating userTypes
 function checkUserTypes(arr) {
     const validTypes = ['customer', 'vendor', 'admin'];
-    for (let i = 0; i < arr.length; i++) {
-        if (validTypes.indexOf(arr[i]) === -1) {
+    for (const element of arr) {
+        if (validTypes.indexOf(element) === -1) {
             return false;
         }
     }
