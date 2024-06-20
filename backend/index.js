@@ -1,15 +1,17 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
-// Intialize express
-const app = express();
-
 // Routers
 const authRouter = require("./api/routes/auth.route.js");
+const userRouter = require("./api/routes/user.controller.js");
+
+// Intialize express
+const app = express();
 
 // Middleware
 app.use(express.json());
 app.use("/api/auth", authRouter);
+app.use("/api/user", userRouter);
 
 
 // Connect to database
